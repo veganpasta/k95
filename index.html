@@ -1,101 +1,766 @@
-<!-- =========================================================
-     RIGHT SIDE OF HEADER
-     ========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="header-links">
+<head>
 
-  <nav
-    class="main-navigation"
-    aria-label="Main navigation"
+  <!-- =========================================================
+       BASIC PAGE SETTINGS
+       ========================================================= -->
+
+  <meta charset="UTF-8">
+
+  <!-- Makes the website display correctly on phones and tablets -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
   >
 
-    <!-- Internal K95 links -->
+  <!-- Browser tab title -->
+  <title>K95.no — Knowledge is Enlightenment</title>
 
-    <a href="#">
-      About
-    </a>
-
-    <a href="#">
-      Contact
-    </a>
-
-    <a href="#">
-      Search
-    </a>
+  <!-- Description for search engines -->
+  <meta
+    name="description"
+    content="K95.no — Knowledge is Enlightenment. Explore audiobooks, research article summaries, book reviews, podcasts and K95 radio."
+  >
 
 
-    <!-- Social / listening platforms -->
+  <!-- =========================================================
+       WEBSITE STYLES
+       ========================================================= -->
 
-    <span class="platform-icons">
+  <style>
+
+    /* =========================================================
+       1. GENERAL PAGE SETTINGS
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
 
 
-      <!-- YouTube -->
+    body {
+      margin: 0;
 
-      <a
-        href="https://www.youtube.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="K95 on YouTube"
-        title="YouTube"
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #f4f4f2;
+
+      color: #222;
+    }
+
+
+
+    /* =========================================================
+       2. WEBSITE HEADER
+       ========================================================= */
+
+    header {
+      background: white;
+
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+
+      padding: 28px 8%;
+    }
+
+
+    /*
+      Keeps the logo and navigation centered
+      within a maximum page width.
+    */
+
+    .header-container {
+      max-width: 1150px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 40px;
+    }
+
+
+
+    /* =========================================================
+       3. K95 BRANDING
+       ========================================================= */
+
+    .site-title {
+      margin: 0;
+
+      font-size: 52px;
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+
+    .site-tagline {
+      margin-top: 8px;
+
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+
+
+    /* =========================================================
+       4. MAIN NAVIGATION
+       ========================================================= */
+
+    .main-navigation {
+      display: flex;
+
+      align-items: center;
+
+      gap: 22px;
+    }
+
+
+    /*
+      About, Contact and Search links
+    */
+
+    .main-navigation > a {
+      color: #111;
+
+      font-size: 16px;
+
+      text-decoration: none;
+    }
+
+
+    .main-navigation > a:hover {
+      text-decoration: underline;
+    }
+
+
+
+    /* =========================================================
+       5. YOUTUBE / SPOTIFY / AUDIBLE ICONS
+       ========================================================= */
+
+    .platform-icons {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-left: 8px;
+
+      padding-left: 20px;
+
+      border-left: 1px solid #ccc;
+    }
+
+
+    .platform-icons a {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 25px;
+      height: 25px;
+
+      text-decoration: none;
+    }
+
+
+    .platform-icons img {
+      width: 22px;
+      height: 22px;
+
+      display: block;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+
+    /*
+      Small visual effect when hovering over an icon.
+    */
+
+    .platform-icons a:hover img {
+      opacity: 0.55;
+
+      transform: translateY(-1px);
+    }
+
+
+
+    /* =========================================================
+       6. MAIN PAGE AREA
+       ========================================================= */
+
+    main {
+      max-width: 1050px;
+
+      margin: 55px auto;
+
+      padding: 36px;
+
+      background: white;
+    }
+
+
+
+    /* =========================================================
+       7. FIVE MAIN K95 SECTIONS
+       =========================================================
+
+       Desktop layout:
+
+       -----------------------------------------------
+       Audiobooks | Research Summaries | Book Reviews
+       -----------------------------------------------
+       Podcasts   | Live Radio
+       -----------------------------------------------
+
+       Each entire box is clickable.
+       ========================================================= */
+
+    .category-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      border-top: 1px solid #aaa;
+      border-left: 1px solid #aaa;
+    }
+
+
+
+    /* =========================================================
+       8. INDIVIDUAL CATEGORY CARDS
+       ========================================================= */
+
+    .category-card {
+      min-height: 230px;
+
+      padding: 38px 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      text-align: center;
+
+      color: #222;
+
+      text-decoration: none;
+
+      border-right: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+
+      transition: background 0.2s ease;
+    }
+
+
+    /*
+      Background changes slightly when the user
+      moves the mouse over a category.
+    */
+
+    .category-card:hover {
+      background: #f1f1ed;
+    }
+
+
+    .category-card h2 {
+      margin: 0 0 16px;
+
+      font-size: 26px;
+
+      line-height: 1.2;
+    }
+
+
+    .category-card p {
+      margin: 0;
+
+      font-size: 17px;
+
+      line-height: 1.55;
+
+      color: #444;
+    }
+
+
+
+    /* =========================================================
+       9. INDIVIDUAL CATEGORY BACKGROUNDS
+       ========================================================= */
+
+    .audiobooks-card {
+      background: #f6f3e8;
+    }
+
+
+    .research-card {
+      background: #eef4f6;
+    }
+
+
+    .reviews-card {
+      background: #f4f2f2;
+    }
+
+
+    .podcasts-card {
+      background: #eef5ef;
+    }
+
+
+    /*
+      Radio receives a slightly stronger background
+      so that it stands out from the other sections.
+    */
+
+    .radio-card {
+      background: #e8f1f3;
+    }
+
+
+
+    /* =========================================================
+       10. RADIO STATUS
+       ========================================================= */
+
+    .radio-status {
+      margin-bottom: 10px;
+
+      font-size: 14px;
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+
+
+    /* =========================================================
+       11. MOBILE DESIGN
+       =========================================================
+
+       On smaller screens the categories become
+       a single vertical column.
+       ========================================================= */
+
+    @media (max-width: 800px) {
+
+      /*
+        Header becomes vertical.
+      */
+
+      .header-container {
+        display: block;
+      }
+
+
+      /*
+        Navigation moves underneath the K95 logo.
+      */
+
+      .main-navigation {
+        margin-top: 28px;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+      }
+
+
+      /*
+        Remove the vertical divider on small screens.
+      */
+
+      .platform-icons {
+        margin-left: 0;
+
+        padding-left: 18px;
+      }
+
+
+      /*
+        Slightly smaller logo on phones.
+      */
+
+      .site-title {
+        font-size: 42px;
+      }
+
+
+      /*
+        Reduce page margins and padding.
+      */
+
+      main {
+        margin: 25px 15px;
+
+        padding: 20px;
+      }
+
+
+      /*
+        Convert the category grid into one column.
+      */
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .category-card {
+        min-height: 180px;
+      }
+
+    }
+
+
+
+    /* =========================================================
+       12. VERY SMALL MOBILE SCREENS
+       ========================================================= */
+
+    @media (max-width: 480px) {
+
+      header {
+        padding: 24px 20px;
+      }
+
+
+      .site-title {
+        font-size: 38px;
+      }
+
+
+      .site-tagline {
+        font-size: 15px;
+      }
+
+
+      .main-navigation {
+        gap: 15px;
+      }
+
+
+      .main-navigation > a {
+        font-size: 15px;
+      }
+
+
+      .platform-icons {
+        padding-left: 15px;
+
+        gap: 12px;
+      }
+
+
+      .platform-icons img {
+        width: 20px;
+        height: 20px;
+      }
+
+
+      .category-card h2 {
+        font-size: 23px;
+      }
+
+
+      .category-card p {
+        font-size: 16px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =========================================================
+       WEBSITE HEADER
+       ========================================================= -->
+
+  <header>
+
+    <div class="header-container">
+
+
+      <!-- =====================================================
+           K95 LOGO / BRAND
+           ===================================================== -->
+
+      <div class="site-branding">
+
+        <h1 class="site-title">
+          K95.no
+        </h1>
+
+        <div class="site-tagline">
+          Knowledge is Enlightenment
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           NAVIGATION
+           ===================================================== -->
+
+      <nav
+        class="main-navigation"
+        aria-label="Main navigation"
       >
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"
-          />
-        </svg>
+
+        <!-- Internal website links -->
+
+        <a href="#">
+          About
+        </a>
+
+
+        <a href="#">
+          Contact
+        </a>
+
+
+        <a href="#">
+          Search
+        </a>
+
+
+
+        <!-- ===================================================
+             EXTERNAL PLATFORM ICONS
+             =================================================== -->
+
+        <span class="platform-icons">
+
+
+          <!-- YouTube -->
+
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="K95 on YouTube"
+            title="YouTube"
+          >
+
+            <img
+              src="https://cdn.simpleicons.org/youtube/111111"
+              alt=""
+            >
+
+          </a>
+
+
+
+          <!-- Spotify -->
+
+          <a
+            href="https://open.spotify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="K95 on Spotify"
+            title="Spotify"
+          >
+
+            <img
+              src="https://cdn.simpleicons.org/spotify/111111"
+              alt=""
+            >
+
+          </a>
+
+
+
+          <!-- Audible -->
+
+          <a
+            href="https://www.audible.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="K95 on Audible"
+            title="Audible"
+          >
+
+            <img
+              src="https://cdn.simpleicons.org/audible/111111"
+              alt=""
+            >
+
+          </a>
+
+
+        </span>
+
+      </nav>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================================
+       MAIN WEBSITE CONTENT
+       ========================================================= -->
+
+  <main>
+
+
+    <!-- =======================================================
+         FIVE MAIN AREAS OF K95
+         ======================================================= -->
+
+    <section
+      class="category-grid"
+      aria-label="Explore K95"
+    >
+
+
+
+      <!-- =====================================================
+           AUDIOBOOKS
+           ===================================================== -->
+
+      <a
+        class="category-card audiobooks-card"
+        href="#"
+      >
+
+        <h2>
+          Audiobooks
+        </h2>
+
+        <p>
+          Listen to books, discover authors and explore
+          literature through audio.
+        </p>
 
       </a>
 
 
-      <!-- Spotify -->
+
+      <!-- =====================================================
+           RESEARCH ARTICLE SUMMARIES
+           ===================================================== -->
 
       <a
-        href="https://open.spotify.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="K95 on Spotify"
-        title="Spotify"
+        class="category-card research-card"
+        href="#"
       >
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm5.5 17.3a.75.75 0 0 1-1 .25c-2.8-1.7-6.3-2.1-10.4-1.15a.75.75 0 1 1-.34-1.46c4.5-1 8.4-.57 11.5 1.32a.75.75 0 0 1 .24 1.04zm1.4-3.1a.94.94 0 0 1-1.3.31c-3.2-2-8.1-2.55-11.9-1.4a.94.94 0 1 1-.54-1.8c4.35-1.3 9.76-.7 13.43 1.55a.94.94 0 0 1 .31 1.34zm.13-3.22C15.2 8.7 8.86 8.47 5.18 9.58a1.13 1.13 0 1 1-.65-2.16c4.23-1.28 11.25-1 15.65 1.62a1.13 1.13 0 0 1-1.15 1.94z"
-          />
-        </svg>
+        <h2>
+          Research Article Summaries
+        </h2>
+
+        <p>
+          Understand academic research through clear,
+          accessible summaries of important studies.
+        </p>
 
       </a>
 
 
-      <!-- Audible -->
+
+      <!-- =====================================================
+           BOOK REVIEWS
+           ===================================================== -->
 
       <a
-        href="https://www.audible.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="K95 on Audible"
-        title="Audible"
+        class="category-card reviews-card"
+        href="#"
       >
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            d="M1.7 8.8c3-3 6.3-4.4 10.3-4.4s7.3 1.4 10.3 4.4c.3.3.7.3 1 0 .3-.3.3-.7 0-1C20 4.5 16.2 2.9 12 2.9S4 4.5.7 7.8c-.3.3-.3.7 0 1 .3.3.7.3 1 0zm3 3c2.1-2.1 4.5-3.1 7.3-3.1s5.2 1 7.3 3.1c.3.3.7.3 1 0 .3-.3.3-.7 0-1-2.4-2.4-5.2-3.6-8.3-3.6s-5.9 1.2-8.3 3.6c-.3.3-.3.7 0 1 .3.3.7.3 1 0zm3 3c1.2-1.2 2.6-1.8 4.3-1.8s3.1.6 4.3 1.8c.3.3.7.3 1 0 .3-.3.3-.7 0-1-1.5-1.5-3.3-2.3-5.3-2.3s-3.8.8-5.3 2.3c-.3.3-.3.7 0 1 .3.3.7.3 1 0zM12 16a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"
-          />
-        </svg>
+        <h2>
+          Book Reviews
+        </h2>
+
+        <p>
+          Explore reviews, essays and reflections on books,
+          authors and ideas.
+        </p>
 
       </a>
 
-    </span>
 
-  </nav>
 
-</div>
+      <!-- =====================================================
+           PODCASTS
+           ===================================================== -->
+
+      <a
+        class="category-card podcasts-card"
+        href="#"
+      >
+
+        <h2>
+          Podcasts
+        </h2>
+
+        <p>
+          Listen to conversations, discussions,
+          interviews and original K95 programmes.
+        </p>
+
+      </a>
+
+
+
+      <!-- =====================================================
+           LIVE RADIO
+           ===================================================== -->
+
+      <a
+        class="category-card radio-card"
+        href="#"
+      >
+
+        <div class="radio-status">
+          ● RADIO
+        </div>
+
+        <h2>
+          Live Radio
+        </h2>
+
+        <p>
+          Listen to the K95 radio stream,
+          programmes and scheduled audio.
+        </p>
+
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+</body>
+
+</html>
