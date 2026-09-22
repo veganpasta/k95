@@ -3,10 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Radio</title>
+
+  <title>K95.no — Knowledge is Enlightenment</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f2;
+      color: #222;
+    }
+
+    header {
+      background: white;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 28px 8%;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .logo {
+      font-size: 52px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #111;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 55px auto;
+      background: white;
+      padding: 36px;
+    }
+
+    .intro {
+      text-align: center;
+      border: 1px solid #aaa;
+      padding: 40px 20px;
+    }
+
+    .intro h2 {
+      font-size: 38px;
+      margin: 0 0 12px;
+    }
+
+    .intro p {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .categories {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #aaa;
+      border-left: 1px solid #aaa;
+    }
+
+    .category {
+      min-height: 220px;
+      padding: 35px 28px;
+      border-right: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .category:hover {
+      background: #f1f1ed;
+    }
+
+    .category h3 {
+      font-size: 26px;
+      margin: 0 0 15px;
+    }
+
+    .category p {
+      font-size: 17px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .podcasts,
+    .radio {
+      grid-column: span 1;
+    }
+
+    .radio {
+      background: #eef4f5;
+    }
+
+    .radio-status {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 750px) {
+      .header-inner {
+        display: block;
+      }
+
+      nav {
+        margin-top: 25px;
+      }
+
+      nav a {
+        margin: 0 18px 0 0;
+      }
+
+      .logo {
+        font-size: 42px;
+      }
+
+      main {
+        margin: 25px 15px;
+        padding: 20px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>My Radio</h1>
-  <p>The station is coming soon.</p>
+
+<header>
+  <div class="header-inner">
+
+    <div>
+      <h1 class="logo">K95.no</h1>
+      <div class="tagline">Knowledge is Enlightenment</div>
+    </div>
+
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Search</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <h2>K95</h2>
+    <p>Listen. Read. Think.</p>
+  </section>
+
+  <section class="categories">
+
+    <a class="category" href="#">
+      <h3>Audiobooks</h3>
+      <p>Books to listen to, explore and discover.</p>
+    </a>
+
+    <a class="category" href="#">
+      <h3>Research Article Summaries</h3>
+      <p>Research explained clearly and accessibly.</p>
+    </a>
+
+    <a class="category" href="#">
+      <h3>Book Reviews</h3>
+      <p>Reviews, essays and reflections on books.</p>
+    </a>
+
+    <a class="category podcasts" href="#">
+      <h3>Podcasts</h3>
+      <p>Conversations, discussions and original programmes.</p>
+    </a>
+
+    <a class="category radio" href="#">
+      <div class="radio-status">● RADIO</div>
+      <h3>Live Radio</h3>
+      <p>Listen to K95 radio.</p>
+    </a>
+
+  </section>
+
+</main>
+
 </body>
 </html>
