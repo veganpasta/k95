@@ -9,36 +9,28 @@
 
   <meta charset="UTF-8">
 
-  <!-- Makes the website display correctly on phones and tablets -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
 
-  <!-- Browser tab title -->
   <title>K95.no — Knowledge is Enlightenment</title>
 
-  <!-- Description for search engines -->
   <meta
     name="description"
-    content="K95.no — Knowledge is Enlightenment. Explore audiobooks, research article summaries, book reviews, podcasts and K95 radio."
+    content="K95.no — Knowledge is Enlightenment."
   >
 
-
-  <!-- =========================================================
-       WEBSITE STYLES
-       ========================================================= -->
 
   <style>
 
     /* =========================================================
-       1. GENERAL PAGE SETTINGS
+       GENERAL SETTINGS
        ========================================================= */
 
     * {
       box-sizing: border-box;
     }
-
 
     body {
       margin: 0;
@@ -49,17 +41,101 @@
         sans-serif;
 
       background: #f4f4f2;
-
       color: #222;
+    }
+
+
+    /* =========================================================
+       UNDER CONSTRUCTION PAGE
+       =========================================================
+
+       This is currently the ONLY part visitors will see.
+       ========================================================= */
+
+    .construction-page {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      text-align: center;
+
+      background: #f4f4f2;
+    }
+
+
+    .construction-content {
+      max-width: 700px;
+    }
+
+
+    .construction-title {
+      margin: 0;
+
+      font-size: clamp(55px, 10vw, 110px);
+      font-weight: 700;
+
+      line-height: 0.95;
+    }
+
+
+    .construction-tagline {
+      margin-top: 20px;
+
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+
+    .construction-divider {
+      width: 80px;
+      height: 1px;
+
+      margin: 40px auto;
+
+      background: #999;
+    }
+
+
+    .construction-message {
+      margin: 0;
+
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+
+    .construction-note {
+      margin-top: 15px;
+
+      font-size: 16px;
+
+      color: #666;
     }
 
 
 
     /* =========================================================
-       2. WEBSITE HEADER
+       FUTURE WEBSITE
+       =========================================================
+
+       Hidden while the website is under construction.
        ========================================================= */
 
-    header {
+    .full-site {
+      display: none;
+    }
+
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .site-header {
       background: white;
 
       border-top: 1px solid #ddd;
@@ -68,11 +144,6 @@
       padding: 28px 8%;
     }
 
-
-    /*
-      Keeps the logo and navigation centered
-      within a maximum page width.
-    */
 
     .header-container {
       max-width: 1150px;
@@ -90,7 +161,7 @@
 
 
     /* =========================================================
-       3. K95 BRANDING
+       K95 BRANDING
        ========================================================= */
 
     .site-title {
@@ -113,7 +184,7 @@
 
 
     /* =========================================================
-       4. MAIN NAVIGATION
+       NAVIGATION
        ========================================================= */
 
     .main-navigation {
@@ -121,13 +192,9 @@
 
       align-items: center;
 
-      gap: 22px;
+      gap: 20px;
     }
 
-
-    /*
-      About, Contact and Search links
-    */
 
     .main-navigation > a {
       color: #111;
@@ -143,9 +210,8 @@
     }
 
 
-
     /* =========================================================
-       5. YOUTUBE / SPOTIFY / AUDIBLE ICONS
+       YOUTUBE / SPOTIFY / AUDIBLE
        ========================================================= */
 
     .platform-icons {
@@ -155,9 +221,9 @@
 
       gap: 14px;
 
-      margin-left: 8px;
+      margin-left: 4px;
 
-      padding-left: 20px;
+      padding-left: 18px;
 
       border-left: 1px solid #ccc;
     }
@@ -171,8 +237,6 @@
 
       width: 25px;
       height: 25px;
-
-      text-decoration: none;
     }
 
 
@@ -188,10 +252,6 @@
     }
 
 
-    /*
-      Small visual effect when hovering over an icon.
-    */
-
     .platform-icons a:hover img {
       opacity: 0.55;
 
@@ -201,10 +261,10 @@
 
 
     /* =========================================================
-       6. MAIN PAGE AREA
+       MAIN CONTENT
        ========================================================= */
 
-    main {
+    .site-main {
       max-width: 1050px;
 
       margin: 55px auto;
@@ -217,18 +277,7 @@
 
 
     /* =========================================================
-       7. FIVE MAIN K95 SECTIONS
-       =========================================================
-
-       Desktop layout:
-
-       -----------------------------------------------
-       Audiobooks | Research Summaries | Book Reviews
-       -----------------------------------------------
-       Podcasts   | Live Radio
-       -----------------------------------------------
-
-       Each entire box is clickable.
+       MAIN CATEGORY GRID
        ========================================================= */
 
     .category-grid {
@@ -243,7 +292,7 @@
 
 
     /* =========================================================
-       8. INDIVIDUAL CATEGORY CARDS
+       CATEGORY CARDS
        ========================================================= */
 
     .category-card {
@@ -269,11 +318,6 @@
       transition: background 0.2s ease;
     }
 
-
-    /*
-      Background changes slightly when the user
-      moves the mouse over a category.
-    */
 
     .category-card:hover {
       background: #f1f1ed;
@@ -302,8 +346,13 @@
 
 
     /* =========================================================
-       9. INDIVIDUAL CATEGORY BACKGROUNDS
+       CATEGORY BACKGROUNDS
        ========================================================= */
+
+    .courses-card {
+      background: #f2eee6;
+    }
+
 
     .audiobooks-card {
       background: #f6f3e8;
@@ -325,11 +374,6 @@
     }
 
 
-    /*
-      Radio receives a slightly stronger background
-      so that it stands out from the other sections.
-    */
-
     .radio-card {
       background: #e8f1f3;
     }
@@ -337,7 +381,7 @@
 
 
     /* =========================================================
-       10. RADIO STATUS
+       RADIO STATUS
        ========================================================= */
 
     .radio-status {
@@ -352,27 +396,15 @@
 
 
     /* =========================================================
-       11. MOBILE DESIGN
-       =========================================================
-
-       On smaller screens the categories become
-       a single vertical column.
+       MOBILE DESIGN
        ========================================================= */
 
     @media (max-width: 800px) {
-
-      /*
-        Header becomes vertical.
-      */
 
       .header-container {
         display: block;
       }
 
-
-      /*
-        Navigation moves underneath the K95 logo.
-      */
 
       .main-navigation {
         margin-top: 28px;
@@ -383,40 +415,24 @@
       }
 
 
-      /*
-        Remove the vertical divider on small screens.
-      */
-
       .platform-icons {
         margin-left: 0;
 
-        padding-left: 18px;
+        padding-left: 15px;
       }
 
-
-      /*
-        Slightly smaller logo on phones.
-      */
 
       .site-title {
         font-size: 42px;
       }
 
 
-      /*
-        Reduce page margins and padding.
-      */
-
-      main {
+      .site-main {
         margin: 25px 15px;
 
         padding: 20px;
       }
 
-
-      /*
-        Convert the category grid into one column.
-      */
 
       .category-grid {
         grid-template-columns: 1fr;
@@ -432,58 +448,23 @@
 
 
     /* =========================================================
-       12. VERY SMALL MOBILE SCREENS
+       LIVE MODE
+       =========================================================
+
+       JavaScript adds the class "site-live" when you decide
+       the full website is ready.
+
+       Under construction disappears.
+       Full website appears.
        ========================================================= */
 
-    @media (max-width: 480px) {
-
-      header {
-        padding: 24px 20px;
-      }
+    body.site-live .construction-page {
+      display: none;
+    }
 
 
-      .site-title {
-        font-size: 38px;
-      }
-
-
-      .site-tagline {
-        font-size: 15px;
-      }
-
-
-      .main-navigation {
-        gap: 15px;
-      }
-
-
-      .main-navigation > a {
-        font-size: 15px;
-      }
-
-
-      .platform-icons {
-        padding-left: 15px;
-
-        gap: 12px;
-      }
-
-
-      .platform-icons img {
-        width: 20px;
-        height: 20px;
-      }
-
-
-      .category-card h2 {
-        font-size: 23px;
-      }
-
-
-      .category-card p {
-        font-size: 16px;
-      }
-
+    body.site-live .full-site {
+      display: block;
     }
 
   </style>
@@ -491,274 +472,368 @@
 </head>
 
 
-
 <body>
 
 
   <!-- =========================================================
-       WEBSITE HEADER
+       PUBLIC UNDER-CONSTRUCTION PAGE
        ========================================================= -->
 
-  <header>
+  <section class="construction-page">
 
-    <div class="header-container">
+    <div class="construction-content">
 
+      <h1 class="construction-title">
+        K95.no
+      </h1>
 
-      <!-- =====================================================
-           K95 LOGO / BRAND
-           ===================================================== -->
-
-      <div class="site-branding">
-
-        <h1 class="site-title">
-          K95.no
-        </h1>
-
-        <div class="site-tagline">
-          Knowledge is Enlightenment
-        </div>
-
+      <div class="construction-tagline">
+        Knowledge is Enlightenment
       </div>
 
+      <div class="construction-divider"></div>
 
+      <p class="construction-message">
+        Under Construction
+      </p>
 
-      <!-- =====================================================
-           NAVIGATION
-           ===================================================== -->
-
-      <nav
-        class="main-navigation"
-        aria-label="Main navigation"
-      >
-
-
-        <!-- Internal website links -->
-
-        <a href="#">
-          About
-        </a>
-
-
-        <a href="#">
-          Contact
-        </a>
-
-
-        <a href="#">
-          Search
-        </a>
-
-
-
-        <!-- ===================================================
-             EXTERNAL PLATFORM ICONS
-             =================================================== -->
-
-        <span class="platform-icons">
-
-
-          <!-- YouTube -->
-
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="K95 on YouTube"
-            title="YouTube"
-          >
-
-            <img
-              src="https://cdn.simpleicons.org/youtube/111111"
-              alt=""
-            >
-
-          </a>
-
-
-
-          <!-- Spotify -->
-
-          <a
-            href="https://open.spotify.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="K95 on Spotify"
-            title="Spotify"
-          >
-
-            <img
-              src="https://cdn.simpleicons.org/spotify/111111"
-              alt=""
-            >
-
-          </a>
-
-
-
-          <!-- Audible -->
-
-          <a
-            href="https://www.audible.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="K95 on Audible"
-            title="Audible"
-          >
-
-            <img
-              src="https://cdn.simpleicons.org/audible/111111"
-              alt=""
-            >
-
-          </a>
-
-
-        </span>
-
-      </nav>
-
+      <p class="construction-note">
+        We are preparing our audio library and programmes.
+      </p>
 
     </div>
 
-  </header>
+  </section>
 
 
 
   <!-- =========================================================
-       MAIN WEBSITE CONTENT
+       FULL FUTURE K95 WEBSITE
+       =========================================================
+
+       This section is currently hidden from visitors.
        ========================================================= -->
 
-  <main>
+  <div class="full-site">
 
 
     <!-- =======================================================
-         FIVE MAIN AREAS OF K95
+         HEADER
          ======================================================= -->
 
-    <section
-      class="category-grid"
-      aria-label="Explore K95"
-    >
+    <header class="site-header">
+
+      <div class="header-container">
 
 
+        <!-- K95 BRANDING -->
 
-      <!-- =====================================================
-           AUDIOBOOKS
-           ===================================================== -->
+        <div>
 
-      <a
-        class="category-card audiobooks-card"
-        href="#"
-      >
+          <h1 class="site-title">
+            K95.no
+          </h1>
 
-        <h2>
-          Audiobooks
-        </h2>
+          <div class="site-tagline">
+            Knowledge is Enlightenment
+          </div>
 
-        <p>
-          Listen to books, discover authors and explore
-          literature through audio.
-        </p>
-
-      </a>
-
-
-
-      <!-- =====================================================
-           RESEARCH ARTICLE SUMMARIES
-           ===================================================== -->
-
-      <a
-        class="category-card research-card"
-        href="#"
-      >
-
-        <h2>
-          Research Article Summaries
-        </h2>
-
-        <p>
-          Understand academic research through clear,
-          accessible summaries of important studies.
-        </p>
-
-      </a>
-
-
-
-      <!-- =====================================================
-           BOOK REVIEWS
-           ===================================================== -->
-
-      <a
-        class="category-card reviews-card"
-        href="#"
-      >
-
-        <h2>
-          Book Reviews
-        </h2>
-
-        <p>
-          Explore reviews, essays and reflections on books,
-          authors and ideas.
-        </p>
-
-      </a>
-
-
-
-      <!-- =====================================================
-           PODCASTS
-           ===================================================== -->
-
-      <a
-        class="category-card podcasts-card"
-        href="#"
-      >
-
-        <h2>
-          Podcasts
-        </h2>
-
-        <p>
-          Listen to conversations, discussions,
-          interviews and original K95 programmes.
-        </p>
-
-      </a>
-
-
-
-      <!-- =====================================================
-           LIVE RADIO
-           ===================================================== -->
-
-      <a
-        class="category-card radio-card"
-        href="#"
-      >
-
-        <div class="radio-status">
-          ● RADIO
         </div>
 
-        <h2>
-          Live Radio
-        </h2>
-
-        <p>
-          Listen to the K95 radio stream,
-          programmes and scheduled audio.
-        </p>
-
-      </a>
 
 
-    </section>
+        <!-- NAVIGATION -->
+
+        <nav
+          class="main-navigation"
+          aria-label="Main navigation"
+        >
+
+          <a href="#">
+            About
+          </a>
+
+          <a href="#">
+            Contact
+          </a>
+
+          <a href="#">
+            Donate
+          </a>
+
+          <a href="#">
+            Volunteer
+          </a>
+          
+          <a href="#">
+            Search
+          </a>
 
 
-  </main>
+          <!-- BUY US A COFFEE -->
+
+          <a
+            class="coffee-button"
+            href="https://www.buymeacoffee.com/YOURNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy us a coffee
+          </a>
+
+
+
+          <!-- PLATFORM ICONS -->
+
+          <span class="platform-icons">
+
+
+            <!-- YouTube -->
+
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="K95 on YouTube"
+              title="YouTube"
+            >
+
+              <img
+                src="https://cdn.simpleicons.org/youtube/111111"
+                alt=""
+              >
+
+            </a>
+
+
+
+            <!-- Spotify -->
+
+            <a
+              href="https://open.spotify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="K95 on Spotify"
+              title="Spotify"
+            >
+
+              <img
+                src="https://cdn.simpleicons.org/spotify/111111"
+                alt=""
+              >
+
+            </a>
+
+
+
+            <!-- Audible -->
+
+            <a
+              href="https://www.audible.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="K95 on Audible"
+              title="Audible"
+            >
+
+              <img
+                src="https://cdn.simpleicons.org/audible/111111"
+                alt=""
+              >
+
+            </a>
+
+
+          </span>
+
+        </nav>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =======================================================
+         MAIN WEBSITE
+         ======================================================= -->
+
+    <main class="site-main">
+
+
+      <!-- =====================================================
+           SIX MAIN K95 SECTIONS
+           ===================================================== -->
+
+      <section
+        class="category-grid"
+        aria-label="Explore K95"
+      >
+
+
+        <!-- AUDIO COURSES -->
+
+        <a
+          class="category-card courses-card"
+          href="#"
+        >
+
+          <h2>
+            Audio Courses
+          </h2>
+
+          <p>
+            Explore structured audio courses designed
+            for learning, discovery and deeper understanding.
+          </p>
+
+        </a>
+
+
+
+        <!-- AUDIOBOOKS -->
+
+        <a
+          class="category-card audiobooks-card"
+          href="#"
+        >
+
+          <h2>
+            Audiobooks
+          </h2>
+
+          <p>
+            Listen to books, discover authors and explore
+            literature through audio.
+          </p>
+
+        </a>
+
+
+
+        <!-- RESEARCH ARTICLE SUMMARIES -->
+
+        <a
+          class="category-card research-card"
+          href="#"
+        >
+
+          <h2>
+            Research Article Summaries
+          </h2>
+
+          <p>
+            Understand academic research through clear,
+            accessible summaries of important studies.
+          </p>
+
+        </a>
+
+
+
+        <!-- BOOK REVIEWS -->
+
+        <a
+          class="category-card reviews-card"
+          href="#"
+        >
+
+          <h2>
+            Book Reviews
+          </h2>
+
+          <p>
+            Explore reviews, essays and reflections
+            on books, authors and ideas.
+          </p>
+
+        </a>
+
+
+
+        <!-- PODCASTS -->
+
+        <a
+          class="category-card podcasts-card"
+          href="#"
+        >
+
+          <h2>
+            Podcasts
+          </h2>
+
+          <p>
+            Listen to conversations, discussions,
+            interviews and original K95 programmes.
+          </p>
+
+        </a>
+
+
+
+        <!-- LIVE RADIO -->
+
+        <a
+          class="category-card radio-card"
+          href="#"
+        >
+
+          <div class="radio-status">
+            ● RADIO
+          </div>
+
+          <h2>
+            Live Radio
+          </h2>
+
+          <p>
+            Listen to the K95 radio stream,
+            programmes and scheduled audio.
+          </p>
+
+        </a>
+
+
+      </section>
+
+    </main>
+
+
+  </div>
+
+
+
+  <!-- =========================================================
+       WEBSITE STATUS SWITCH
+       =========================================================
+
+       IMPORTANT:
+
+       false = show UNDER CONSTRUCTION page
+       true  = show FULL WEBSITE
+
+       When your audio is ready, simply change:
+
+       const SITE_LIVE = true;
+
+       to:
+
+       const SITE_LIVE = true;
+
+       ========================================================= -->
+
+  <script>
+
+    const SITE_LIVE = false;
+
+
+    if (SITE_LIVE) {
+
+      document.body.classList.add("site-live");
+
+    }
+
+  </script>
 
 
 </body>
