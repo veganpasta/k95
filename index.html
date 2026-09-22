@@ -1,221 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>K95.no — Knowledge is Enlightenment</title>
+<head>
+
+  <!-- =========================================================
+       BASIC PAGE SETTINGS
+       ========================================================= -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    K95.no — Knowledge is Enlightenment
+  </title>
+
+  <meta
+    name="description"
+    content="K95.no — Knowledge is Enlightenment. Explore audiobooks, research article summaries, book reviews, podcasts and K95 radio."
+  >
+
+
+  <!-- =========================================================
+       WEBSITE STYLES
+       ========================================================= -->
 
   <style>
+
+    /* ---------------------------------------------------------
+       1. GENERAL PAGE SETTINGS
+       --------------------------------------------------------- */
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: #f4f4f2;
       color: #222;
     }
 
+
+    /* ---------------------------------------------------------
+       2. HEADER / K95 BANNER
+       --------------------------------------------------------- */
+
     header {
       background: white;
+
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
+
       padding: 28px 8%;
     }
 
-    .header-inner {
+
+    .header-container {
       max-width: 1150px;
-      margin: auto;
+
+      margin: 0 auto;
+
       display: flex;
+
       justify-content: space-between;
       align-items: flex-start;
+
+      gap: 30px;
     }
 
-    .logo {
+
+    /* K95.no */
+
+    .site-title {
+      margin: 0;
+
       font-size: 52px;
       font-weight: 700;
-      margin: 0;
+
       line-height: 1;
     }
 
-    .tagline {
+
+    /* Knowledge is Enlightenment */
+
+    .site-tagline {
       margin-top: 8px;
+
       font-size: 17px;
       font-weight: 600;
     }
 
-    nav a {
-      color: #111;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 16px;
+
+    /* ---------------------------------------------------------
+       3. RIGHT SIDE OF HEADER
+       --------------------------------------------------------- */
+
+    .header-links {
+      text-align: right;
     }
 
-    nav a:hover {
+
+    /* External platforms:
+       YouTube, Spotify and Audible
+    */
+
+    .platform-links {
+      margin-bottom: 14px;
+    }
+
+
+    .platform-links a {
+      margin-left: 18px;
+
+      color: #555;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      text-decoration: none;
+    }
+
+
+    .platform-links a:hover {
+      color: #000;
       text-decoration: underline;
     }
 
+
+    /* Main website navigation */
+
+    .main-navigation a {
+      margin-left: 22px;
+
+      color: #111;
+
+      font-size: 16px;
+
+      text-decoration: none;
+    }
+
+
+    .main-navigation a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ---------------------------------------------------------
+       4. MAIN CONTENT AREA
+       --------------------------------------------------------- */
+
     main {
       max-width: 1050px;
+
       margin: 55px auto;
-      background: white;
+
       padding: 36px;
+
+      background: white;
     }
 
-    .intro {
-      text-align: center;
-      border: 1px solid #aaa;
-      padding: 40px 20px;
-    }
 
-    .intro h2 {
-      font-size: 38px;
-      margin: 0 0 12px;
-    }
+    /* ---------------------------------------------------------
+       5. MAIN K95 CATEGORIES
+       --------------------------------------------------------- */
 
-    .intro p {
-      font-size: 20px;
-      margin: 0;
-    }
-
-    .categories {
-      margin-top: 30px;
+    .category-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       border-top: 1px solid #aaa;
       border-left: 1px solid #aaa;
     }
 
-    .category {
+
+    .category-card {
       min-height: 220px;
+
       padding: 35px 28px;
-      border-right: 1px solid #aaa;
-      border-bottom: 1px solid #aaa;
-      text-align: center;
-      text-decoration: none;
-      color: #222;
+
       display: flex;
       flex-direction: column;
+
       justify-content: center;
+
+      text-align: center;
+
+      color: #222;
+
+      text-decoration: none;
+
+      border-right: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
     }
 
-    .category:hover {
+
+    .category-card:hover {
       background: #f1f1ed;
     }
 
-    .category h3 {
-      font-size: 26px;
+
+    .category-card h2 {
       margin: 0 0 15px;
+
+      font-size: 26px;
     }
 
-    .category p {
+
+    .category-card p {
+      margin: 0;
+
       font-size: 17px;
       line-height: 1.5;
-      margin: 0;
     }
 
-    .podcasts,
-    .radio {
-      grid-column: span 1;
-    }
 
-    .radio {
+    /* ---------------------------------------------------------
+       6. RADIO CATEGORY
+       --------------------------------------------------------- */
+
+    .radio-card {
       background: #eef4f5;
     }
 
+
     .radio-status {
-      font-weight: bold;
       margin-bottom: 10px;
+
+      font-weight: bold;
     }
 
+
+    /* ---------------------------------------------------------
+       7. MOBILE DESIGN
+       --------------------------------------------------------- */
+
     @media (max-width: 750px) {
-      .header-inner {
+
+      .header-container {
         display: block;
       }
 
-      nav {
-        margin-top: 25px;
+
+      .header-links {
+        margin-top: 28px;
+
+        text-align: left;
       }
 
-      nav a {
+
+      .platform-links a {
         margin: 0 18px 0 0;
       }
 
-      .logo {
+
+      .main-navigation {
+        margin-top: 18px;
+      }
+
+
+      .main-navigation a {
+        margin: 0 18px 0 0;
+      }
+
+
+      .site-title {
         font-size: 42px;
       }
 
+
       main {
         margin: 25px 15px;
+
         padding: 20px;
       }
 
-      .categories {
+
+      .category-grid {
         grid-template-columns: 1fr;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-<header>
-  <div class="header-inner">
 
-    <div>
-      <h1 class="logo">K95.no</h1>
-      <div class="tagline">Knowledge is Enlightenment</div>
+  <!-- =========================================================
+       WEBSITE HEADER
+       ========================================================= -->
+
+  <header>
+
+    <div class="header-container">
+
+
+      <!-- K95 branding -->
+
+      <div class="site-branding">
+
+        <h1 class="site-title">
+          K95.no
+        </h1>
+
+        <div class="site-tagline">
+          Knowledge is Enlightenment
+        </div>
+
+      </div>
+
+
+      <!-- Right side of header -->
+
+      <div class="header-links">
+
+
+        <!-- External platforms -->
+
+        <div class="platform-links">
+
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+
+          <a
+            href="https://open.spotify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Spotify
+          </a>
+
+          <a
+            href="https://www.audible.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Audible
+          </a>
+
+        </div>
+
+
+        <!-- Main site navigation -->
+
+        <nav
+          class="main-navigation"
+          aria-label="Main navigation"
+        >
+
+          <a href="#">
+            About
+          </a>
+
+          <a href="#">
+            Contact
+          </a>
+
+          <a href="#">
+            Search
+          </a>
+
+        </nav>
+
+
+      </div>
+
     </div>
 
-    <nav>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Search</a>
-    </nav>
+  </header>
 
-  </div>
-</header>
 
-<main>
 
-  <section class="intro">
-    <h2>K95</h2>
-    <p>Listen. Read. Think.</p>
-  </section>
+  <!-- =========================================================
+       MAIN WEBSITE CONTENT
+       ========================================================= -->
 
-  <section class="categories">
+  <main>
 
-    <a class="category" href="#">
-      <h3>Audiobooks</h3>
-      <p>Books to listen to, explore and discover.</p>
-    </a>
 
-    <a class="category" href="#">
-      <h3>Research Article Summaries</h3>
-      <p>Research explained clearly and accessibly.</p>
-    </a>
+    <!-- =======================================================
+         FIVE MAIN AREAS OF K95
+         ======================================================= -->
 
-    <a class="category" href="#">
-      <h3>Book Reviews</h3>
-      <p>Reviews, essays and reflections on books.</p>
-    </a>
+    <section
+      class="category-grid"
+      aria-label="Explore K95"
+    >
 
-    <a class="category podcasts" href="#">
-      <h3>Podcasts</h3>
-      <p>Conversations, discussions and original programmes.</p>
-    </a>
 
-    <a class="category radio" href="#">
-      <div class="radio-status">● RADIO</div>
-      <h3>Live Radio</h3>
-      <p>Listen to K95 radio.</p>
-    </a>
+      <!-- AUDIOBOOKS -->
 
-  </section>
+      <a
+        class="category-card"
+        href="#"
+      >
 
-</main>
+        <h2>
+          Audiobooks
+        </h2>
+
+        <p>
+          Listen to books, discover authors and explore
+          literature through audio.
+        </p>
+
+      </a>
+
+
+
+      <!-- RESEARCH ARTICLE SUMMARIES -->
+
+      <a
+        class="category-card"
+        href="#"
+      >
+
+        <h2>
+          Research Article Summaries
+        </h2>
+
+        <p>
+          Understand academic research through clear,
+          accessible summaries of important studies.
+        </p>
+
+      </a>
+
+
+
+      <!-- BOOK REVIEWS -->
+
+      <a
+        class="category-card"
+        href="#"
+      >
+
+        <h2>
+          Book Reviews
+        </h2>
+
+        <p>
+          Explore reviews, essays and reflections on books,
+          authors and ideas.
+        </p>
+
+      </a>
+
+
+
+      <!-- PODCASTS -->
+
+      <a
+        class="category-card"
+        href="#"
+      >
+
+        <h2>
+          Podcasts
+        </h2>
+
+        <p>
+          Listen to conversations, discussions,
+          interviews and original K95 programmes.
+        </p>
+
+      </a>
+
+
+
+      <!-- LIVE RADIO -->
+
+      <a
+        class="category-card radio-card"
+        href="#"
+      >
+
+        <div class="radio-status">
+          ● RADIO
+        </div>
+
+        <h2>
+          Live Radio
+        </h2>
+
+        <p>
+          Listen to the K95 radio stream,
+          programmes and scheduled audio.
+        </p>
+
+      </a>
+
+
+    </section>
+
+
+  </main>
+
 
 </body>
+
 </html>
